@@ -1,4 +1,5 @@
 -- Data Exploration
+-- Queries Utilized in Tableau Project 1
 
 CREATE DATABASE CovPortfolio1;
 USE CovPortfolio1;
