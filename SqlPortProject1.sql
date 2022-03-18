@@ -216,7 +216,26 @@ FROM stringency_ratings;
 
 
 
-
+SELECT
+location,
+date(date_date) as date_date,
+SUM(excess_mortality) as total_excess_mortality,
+CASE
+    WHEN date_date BETWEEN '2020-04-01' AND '2020-12-01' THEN '1st Check'
+    WHEN date_date BETWEEN '2020-12-01' AND '2021-03-01' THEN '2nd Check'
+    WHEN date_date BETWEEN '2021-03-01' AND '2022-03-14' THEN '3rd Check'
+    ELSE 'Inapplicable'
+    END AS Stimulus_Records
+FROM covidvaccinations
+WHERE location LIKE 'United States'
+GROUP BY 
+	CASE
+    WHEN date_date BETWEEN '2020-04-01' AND '2020-12-01' THEN '1st Check'
+    WHEN date_date BETWEEN '2020-12-01' AND '2021-03-01' THEN '2nd Check'
+    WHEN date_date BETWEEN '2021-03-01' AND '2022-03-14' THEN '3rd Check'
+    ELSE 'Inapplicable'
+    END
+ORDER BY date_date;
 
 
 
