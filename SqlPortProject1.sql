@@ -210,12 +210,6 @@ FROM stringency_ratings;
 
 
 
-
-
-
-
-
-
 SELECT
 location,
 date(date_date) as date_date,
