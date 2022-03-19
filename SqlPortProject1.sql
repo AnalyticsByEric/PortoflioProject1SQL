@@ -188,7 +188,8 @@ FROM tp_vs_v;
 -- to it's previous index number (down-up 2,1,3,2,4,3,5,4, etc.) . . . 
 -- in countries within north america to measure whether or not relaxing said measures . . . 
 -- had a positive effect on the positive rate going down; as we want the positive rate to gown down with each degeneration in stringency
--- In this exercise, numbers under column stringency_effectiveness that are less than 0, are considered to have positive correlation 
+-- In this exercise, numbers under column stringency_effectiveness that are less than 0, are considered to have positive correlation
+-- Meaning that as stringency is is lowered, so is the positive rate/Relaxation  = lower positive rate
 
 WITH stringency_ratings(location, avg_positive_rate, Total_NewVac_By_Stringency, stringency_index)
 AS 
